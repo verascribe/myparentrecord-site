@@ -1,0 +1,42 @@
+---
+layout: default
+title: Changelog
+---
+
+<div class="max-w-3xl mx-auto px-4 py-12">
+  <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">Changelog</h1>
+  <p class="mt-2 text-gray-600 dark:text-gray-300">
+    All releases, newest first.
+  </p>
+
+  <div class="mt-10 space-y-10">
+    {% for post in site.posts %} {% assign badge_class = 'bg-emerald-600/20
+    text-emerald-300 border-emerald-500/30' %} {% if post.type == 'major' %} {%
+    assign badge_class = 'bg-blue-600/20 text-blue-300 border-blue-500/30' %} {%
+    endif %}
+
+    <article
+      class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white/60 dark:bg-gray-800/40 p-6"
+    >
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <div class="text-sm text-gray-600 dark:text-gray-300">
+            {{ post.date | date: "%B %d, %Y" }}
+          </div>
+          <h2 class="mt-1 text-xl font-semibold">{{ post.title }}</h2>
+        </div>
+
+        {% if post.version %}
+        <span
+          class="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-sm {{ badge_class }}"
+        >
+          v{{ post.version }}
+        </span>
+        {% endif %}
+      </div>
+
+      <div class="mt-6 prose dark:prose-invert">{{ post.content }}</div>
+    </article>
+    {% endfor %}
+  </div>
+</div>

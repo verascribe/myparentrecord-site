@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      {% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}
+    </title>
+    <meta name="description" content="{{ site.description }}" />
+
+    <script>
+      (function () {
+        const theme = localStorage.getItem("theme");
+        if (theme === "light") {
+          document.documentElement.classList.remove("dark");
+        } else {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
+
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2a9d8f",
+              secondary: "#7c3aed",
+              accent: "#fb7185",
+              charcoal: "#353d4d",
+              offwhite: "#f9fafb",
+            },
+          },
+        },
+      };
+    </script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Avb2QiuDEEvB4bZJYdftzHkVQ4rWwW8O9zC1xNn1xqZzTtZ0pniS3pSkeCZMt2rt7NmBGG99nmHn7+O3uQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body
+    class="bg-offwhite text-charcoal dark:bg-charcoal dark:text-offwhite min-h-screen flex flex-col"
+  >
+    <header
+      class="sticky top-0 z-50 border-b border-gray-200/60 dark:border-gray-700/60 bg-offwhite/95 dark:bg-charcoal/95 backdrop-blur"
+    >
+      <nav
+        class="max-w-6xl mx-auto flex flex-wrap items-center justify-between p-4 gap-4"
+      >
+        <a
+          href="{{ '/' | relative_url }}"
+          class="font-semibold tracking-tight text-lg"
+        >
+          <span class="text-primary">My</span> Parent Record
+        </a>
+
+        <div class="flex flex-wrap items-center gap-4">
+          <a
+            href="{{ '/' | relative_url }}"
+            class="text-sm hover:text-primary transition-colors"
+            >Home</a
+          >
+          <a
+            href="{{ '/updates.html' | relative_url }}"
+            class="text-sm hover:text-primary transition-colors"
+            >Latest Update</a
+          >
+          <a
+            href="{{ '/changelog.html' | relative_url }}"
+            class="text-sm hover:text-primary transition-colors"
+            >Changelog</a
+          >
+          <a
+            href="#purchase"
+            class="text-sm hover:text-primary transition-colors"
+            >Purchase</a
+          >
+
+          <button
+            id="themeToggle"
+            type="button"
+            class="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 dark:border-gray-700 bg-white/60 dark:bg-gray-800/60 hover:bg-white dark:hover:bg-gray-800 transition-colors"
+            aria-label="Toggle dark mode"
+          >
+            <i id="themeIcon" class="fa-solid fa-moon"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="flex-grow">{{ content }}</main>
+
+    <footer class="border-t border-gray-200/60 dark:border-gray-700/60">
+      <div
+        class="max-w-6xl mx-auto px-4 py-10 flex flex-wrap items-center justify-between gap-4 text-sm text-gray-600 dark:text-gray-300"
+      >
+        <div>&copy; {{ 'now' | date: '%Y' }} {{ site.title }}</div>
+        <div class="flex flex-wrap items-center gap-4">
+          <a
+            href="{{ '/updates.html' | relative_url }}"
+            class="hover:text-primary transition-colors"
+            >Latest Update</a
+          >
+          <a
+            href="{{ '/changelog.html' | relative_url }}"
+            class="hover:text-primary transition-colors"
+            >Changelog</a
+          >
+          <a href="#purchase" class="hover:text-primary transition-colors"
+            >Purchase</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        const icon = document.getElementById("themeIcon");
+
+        function syncIcon() {
+          const isDark = document.documentElement.classList.contains("dark");
+          icon.className = isDark ? "fa-solid fa-sun" : "fa-solid fa-moon";
+        }
+
+        syncIcon();
+
+        document
+          .getElementById("themeToggle")
+          .addEventListener("click", function () {
+            const isDark = document.documentElement.classList.contains("dark");
+            if (isDark) {
+              document.documentElement.classList.remove("dark");
+              localStorage.setItem("theme", "light");
+            } else {
+              document.documentElement.classList.add("dark");
+              localStorage.setItem("theme", "dark");
+            }
+            syncIcon();
+          });
+      })();
+    </script>
+  </body>
+</html>

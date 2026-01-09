@@ -1,0 +1,33 @@
+---
+layout: default
+title: Latest Update
+---
+
+{% assign post = site.posts.first %}
+
+<div class="max-w-3xl mx-auto px-4 py-12">
+  {% if post %}
+  <div class="mb-8">
+    <div class="text-sm text-gray-600 dark:text-gray-300">
+      {{ post.date | date: "%B %d, %Y" }}{% if post.version %} &middot; v{{
+      post.version }}{% endif %}
+    </div>
+    <h1 class="mt-2 text-3xl md:text-4xl font-semibold tracking-tight">
+      {{ post.title }}
+    </h1>
+  </div>
+
+  <div class="prose lg:prose-xl dark:prose-invert">{{ post.content }}</div>
+
+  <div class="mt-10">
+    <a
+      href="{{ '/changelog.html' | relative_url }}"
+      class="inline-flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-700 px-5 py-3 font-medium hover:border-primary hover:text-primary transition-colors"
+    >
+      See Full History
+    </a>
+  </div>
+  {% else %}
+  <p class="text-gray-600 dark:text-gray-300">No updates yet.</p>
+  {% endif %}
+</div>
