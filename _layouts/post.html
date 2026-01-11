@@ -2,16 +2,242 @@
 layout: default
 ---
 
-<div class="max-w-3xl mx-auto px-4 py-12">
-  <div class="mb-8">
-    <div class="text-sm text-gray-600 dark:text-gray-300">
-      {{ page.date | date: "%B %d, %Y" }}{% if page.version %} &middot; v{{
-      page.version }}{% endif %}
-    </div>
-    <h1 class="mt-2 text-3xl md:text-4xl font-semibold tracking-tight">
-      {{ page.title }}
-    </h1>
-  </div>
+<!-- Wrapper for the whole page content -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 fade-in">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+    <!-- MAIN CONTENT COLUMN (Spans 8 of 12 columns) -->
+    <article class="lg:col-span-8">
+      <!-- Header Section -->
+      <div class="mb-8 md:mb-12">
+        {% if page.version %}
+        <!-- Updated: Teal Background (Low Opacity) / Teal Text -->
+        <span
+          class="inline-block px-3 py-1 bg-[#2a9d8f]/20 text-[#2a9d8f] rounded-full text-sm font-bold mb-4 border border-[#2a9d8f]/20"
+        >
+          {{ page.version }}
+        </span>
+        {% endif %}
 
-  <div class="prose lg:prose-xl dark:prose-invert">{{ content }}</div>
+        <!-- Updated: Text Color #f9fafb -->
+        <h1
+          class="text-3xl md:text-5xl font-bold text-[#f9fafb] mb-6 tracking-tight leading-tight"
+        >
+          {{ page.title }}
+        </h1>
+
+        <div
+          class="flex items-center space-x-4 text-gray-400 text-sm md:text-base"
+        >
+          <time datetime="{{ page.date | date_to_xmlschema }}"
+            >{{ page.date | date: "%B %d, %Y" }}</time
+          >
+          <span>•</span>
+          <!-- Updated: Teal Text -->
+          <span class="font-medium text-[#2a9d8f]">{{ page.category }}</span>
+        </div>
+      </div>
+
+      <!-- Content Body -->
+      <!-- Updated: 'prose-invert' makes markdown white. Links set to Teal. -->
+      <div
+        class="prose prose-lg prose-invert prose-img:mx-auto prose-headings:font-bold prose-headings:text-[#f9fafb] prose-p:text-[#f9fafb]/80 prose-li:text-[#f9fafb]/80 prose-a:text-[#2a9d8f] hover:prose-a:text-[#238b7e] max-w-none"
+      >
+        {{ content }}
+      </div>
+
+      <a
+        href="YOUR_GUIDE_LINK_HERE"
+        class="mt-8 block w-1/2 mx-auto text-center bg-[#2a9d8f] text-white border border-[#2a9d8f]/20 font-bold py-3 rounded-xl transition-colors"
+      >
+        Upgrade to the Latest Version
+      </a>
+
+      <!-- Technical Changes Box -->
+      <!-- Logic: Checks for EITHER groups OR flat items -->
+      {% if page.changelog_items or page.changelog_groups %}
+      <div
+        class="mt-12 bg-[#1e1f20] rounded-2xl p-6 md:p-8 border border-white/5"
+      >
+        <h3 class="text-lg font-bold text-[#f9fafb] mb-4 flex items-center">
+          <i data-lucide="settings" class="w-5 h-5 mr-2 text-[#2a9d8f]"></i>
+          Technical Changes in {{ page.version }}
+        </h3>
+
+        <!-- SCENARIO A: Grouped List (The new way) -->
+        {% if page.changelog_groups %}
+        <div class="space-y-6">
+          {% for group in page.changelog_groups %}
+          <div>
+            <!-- Sub-Heading -->
+            <h4
+              class="font-bold text-[#f9fafb] text-sm uppercase tracking-wider mb-3 border-b border-white/10 pb-1"
+            >
+              {{ group.name }}
+            </h4>
+            <!-- Items -->
+            <ul class="space-y-3 m-0 p-0 list-none">
+              {% for item in group.items %}
+              <li class="flex items-start text-[#f9fafb]/80">
+                <div
+                  class="w-1.5 h-1.5 rounded-full bg-[#2a9d8f] mt-2.5 mr-3 flex-shrink-0"
+                ></div>
+                <span class="leading-relaxed"
+                  >{{ item | markdownify | remove: '
+                  <p>' | remove: '</p>
+                  ' }}</span
+                >
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endfor %}
+        </div>
+
+        <!-- SCENARIO B: Flat List (Your old posts) -->
+        {% elsif page.changelog_items %}
+        <ul class="space-y-3 m-0 p-0 list-none">
+          {% for item in page.changelog_items %}
+          <li class="flex items-start text-[#f9fafb]/80">
+            <div
+              class="w-1.5 h-1.5 rounded-full bg-[#2a9d8f] mt-2.5 mr-3 flex-shrink-0"
+            ></div>
+            <span class="leading-relaxed"
+              >{{ item | markdownify | remove: '
+              <p>' | remove: '</p>
+              ' }}</span
+            >
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+      {% endif %}
+
+      <!-- Footer Navigation -->
+      <div class="mt-12 pt-8 border-t border-white/10">
+        <a
+          href="/updates.html"
+          class="inline-flex items-center text-[#2a9d8f] font-bold hover:text-[#238b7e] transition-colors"
+        >
+          <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> Back to Updates
+        </a>
+      </div>
+    </article>
+
+    <!-- SIDEBAR COLUMN (Spans 4 of 12 columns) -->
+    <aside class="lg:col-span-4 space-y-8">
+      <!-- Sticky Container -->
+      <div class="sticky top-24 space-y-8">
+        <!-- Card 1: Etsy Review CTA (Universal Version) -->
+        <!-- Updated: Background #7c3aed (Purple) -->
+        <div
+          class="bg-[#7c3aed] rounded-2xl p-6 text-white shadow-lg relative overflow-hidden group border border-white/5"
+        >
+          <!-- Decorative background circle -->
+          <div
+            class="absolute -top-10 -right-10 w-32 h-32 bg-white/10 rounded-full group-hover:scale-110 transition-transform duration-500"
+          ></div>
+
+          <!-- Headline -->
+          <h3 class="text-xl font-bold mb-3 relative z-10">
+            Help us keep the updates coming.
+          </h3>
+
+          <!-- Body -->
+          <p class="text-white/90 mb-6 text-sm relative z-10 leading-relaxed">
+            Reviews on Etsy help other families find us and fuel the development
+            of new features. It only takes a moment to support the project.
+          </p>
+
+          <!-- Button -->
+          <a
+            href="YOUR_ETSY_LINK_HERE"
+            target="_blank"
+            class="block w-full text-center bg-white text-[#7c3aed] font-bold py-3 rounded-xl hover:bg-gray-50 transition-colors relative z-10 shadow-sm"
+          >
+            Support the Project
+          </a>
+        </div>
+
+        <!-- Card: Upgrade Workbook Guide -->
+        <!-- Background: #1e1f20 (Dark Charcoal) -->
+        <div
+          class="bg-[#2a9d8f] rounded-2xl p-6 border border-white/5 shadow-sm"
+        >
+          <!-- Headline with Icon -->
+          <h3 class="text-lg font-bold text-[#f9fafb] mb-3 flex items-center">
+            <!-- Icon: Image/Picture to reinforce "Visual Guide" -->
+            <i data-lucide="image" class="w-5 h-5 mr-2 text-[#f9fafb]"></i>
+            How to update your workbook
+          </h3>
+
+          <!-- Body Copy -->
+          <p class="text-sm text-[#f9fafb] mb-6 leading-relaxed">
+            Don't worry—you don't need to be a tech wizard. Follow our easy
+            picture guide to get set up in just a few minutes.
+          </p>
+
+          <!-- Button: Teal tint to signal "Helpful Action" -->
+          <!-- Replace 'YOUR_GUIDE_LINK_HERE' with the actual URL -->
+          <a
+            href="YOUR_GUIDE_LINK_HERE"
+            class="block w-full text-center bg-white text-[#2a9d8f] border border-[#2a9d8f]/20 font-bold py-3 rounded-xl transition-colors"
+          >
+            View the Picture Guide
+          </a>
+        </div>
+
+        <!-- Card 2: Latest Updates -->
+        <!-- Updated: BG #1e1f20, Dark Mode Text -->
+        <div
+          class="bg-[#1e1f20] rounded-2xl p-6 border border-white/5 shadow-sm"
+        >
+          <h3
+            class="text-lg font-bold text-[#f9fafb] mb-4 border-b border-white/10 pb-2"
+          >
+            Latest Updates
+          </h3>
+          <ul class="space-y-4">
+            {% for post in site.posts limit:3 %}
+            <li>
+              <a href="{{ post.url }}" class="group">
+                <span class="block text-xs text-gray-400 mb-1"
+                  >{{ post.date | date: "%b %d" }}</span
+                >
+                <!-- Updated: Text color and Hover Teal -->
+                <span
+                  class="block text-[#f9fafb]/90 font-medium group-hover:text-[#2a9d8f] transition-colors line-clamp-2"
+                >
+                  {{ post.title }}
+                </span>
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <!-- Card 3: Newsletter -->
+        <!-- Updated: BG #1e1f20 -->
+        <div class="bg-[#1e1f20] rounded-2xl p-6 border border-white/5">
+          <h3 class="text-lg font-bold text-[#f9fafb] mb-2">
+            Stay in the loop
+          </h3>
+          <p class="text-sm text-gray-400 mb-4">
+            Get the latest features delivered to your inbox.
+          </p>
+          <!-- Updated: Input field for dark mode (Dark BG, Light Text) -->
+          <input
+            type="email"
+            placeholder="Email address"
+            class="w-full px-4 py-2 rounded-lg bg-[#131314] border border-white/10 text-[#f9fafb] mb-2 focus:ring-2 focus:ring-[#2a9d8f] outline-none placeholder-gray-500"
+          />
+          <button
+            class="w-full bg-[#f9fafb] text-[#131314] font-bold py-2 rounded-lg hover:bg-white transition-colors"
+          >
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </aside>
+  </div>
 </div>

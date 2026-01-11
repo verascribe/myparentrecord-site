@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Updates | My Parent Record
+    </title>
+    <!-- UPDATED: Added ?plugins=typography to the end of this URL -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              charcoal: "#131314",
+              "off-white": "#f9fafb",
+              "brand-teal": "#2a9d8f",
+              "brand-purple": "#7c3aed",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .fade-in {
+        animation: fadeIn 0.5s ease-in;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-charcoal text-off-white font-sans flex flex-col min-h-screen">
+    <!-- Navigation -->
+    <nav
+      class="sticky top-0 z-50 bg-charcoal/90 backdrop-blur-md border-b border-gray-700"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+          <a href="/" class="flex items-center cursor-pointer group">
+            <div
+              class="bg-brand-teal p-2 rounded-lg mr-2 group-hover:bg-brand-teal/90 transition-colors"
+            >
+              <i data-lucide="heart" class="h-6 w-6 text-off-white"></i>
+            </div>
+            <span class="font-bold text-xl text-off-white tracking-tight"
+              >My Parent <span class="text-brand-teal">Record</span></span
+            >
+          </a>
+
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="/"
+              class="text-off-white hover:text-brand-teal transition-colors"
+              >Home</a
+            >
+            <a
+              href="/updates.html"
+              class="text-brand-teal font-semibold transition-colors"
+              >Updates</a
+            >
+            <a
+              href="/changelog.html"
+              class="text-off-white hover:text-brand-teal transition-colors"
+              >Changelog</a
+            >
+          </div>
+
+          <div class="hidden md:flex">
+            <a
+              href="#"
+              class="bg-brand-teal hover:bg-brand-teal/90 text-off-white px-5 py-2 rounded-full font-medium transition-all shadow-md hover:shadow-lg"
+              >Get Started</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow"><div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 fade-in">
+  <div class="text-center mb-16">
+    <h1 class="text-4xl font-bold text-off-white mb-4">Latest Updates</h1>
+    <p class="text-lg text-gray-300">Release notes and news from the team.</p>
+  </div>
+
+  <div class="grid gap-12">
+    
+    <article
+      class="bg-gray-800 rounded-2xl shadow-sm border border-gray-700 overflow-hidden hover:shadow-md transition-shadow flex flex-col md:flex-row"
+    >
+      <div
+        class="md:w-1/3 h-48 md:h-auto bg-gray-700 flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-brand-teal/20 to-brand-purple/20"
+      >
+        <div class="relative z-10 p-6 text-center">
+          <span
+            class="inline-block px-3 py-1 bg-gray-600/80 backdrop-blur rounded-full text-xs font-bold text-brand-teal uppercase tracking-wide mb-2"
+          >
+            Feature
+          </span>
+          <div class="text-gray-400 text-sm font-medium">
+            Jan 11, 2026
+          </div>
+        </div>
+      </div>
+      <div class="p-8 md:w-2/3 flex flex-col justify-center">
+        <div class="flex items-center gap-3 mb-3">
+          <span
+            class="px-2 py-1 rounded text-xs font-bold bg-gray-700 text-gray-300 border border-gray-600"
+          >
+            2.1.0
+          </span>
+          <h2
+            class="text-2xl font-bold text-off-white hover:text-brand-teal cursor-pointer transition-colors"
+          >
+            <a href="/feature/2026/01/11/v2-1-0.html">Personal Expenses, Flexible Schedules, and Enhanced Privacy</a>
+          </h2>
+        </div>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          We understand that when you use this app, you are trusting us with the most sensitive parts of your life—your children’s schedule and your financial history. You need a tool...
+        </p>
+        <a
+          href="/feature/2026/01/11/v2-1-0.html"
+          class="text-brand-teal font-semibold hover:text-brand-teal/80 flex items-center"
+        >
+          Read Release Notes
+          <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+        </a>
+      </div>
+    </article>
+    
+    <article
+      class="bg-gray-800 rounded-2xl shadow-sm border border-gray-700 overflow-hidden hover:shadow-md transition-shadow flex flex-col md:flex-row"
+    >
+      <div
+        class="md:w-1/3 h-48 md:h-auto bg-gray-700 flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-brand-teal/20 to-brand-purple/20"
+      >
+        <div class="relative z-10 p-6 text-center">
+          <span
+            class="inline-block px-3 py-1 bg-gray-600/80 backdrop-blur rounded-full text-xs font-bold text-brand-teal uppercase tracking-wide mb-2"
+          >
+            Bug Fix
+          </span>
+          <div class="text-gray-400 text-sm font-medium">
+            Jan 07, 2026
+          </div>
+        </div>
+      </div>
+      <div class="p-8 md:w-2/3 flex flex-col justify-center">
+        <div class="flex items-center gap-3 mb-3">
+          <span
+            class="px-2 py-1 rounded text-xs font-bold bg-gray-700 text-gray-300 border border-gray-600"
+          >
+            2.0.1
+          </span>
+          <h2
+            class="text-2xl font-bold text-off-white hover:text-brand-teal cursor-pointer transition-colors"
+          >
+            <a href="/bug%20fix/2026/01/07/v2-0-1.html">Settings Input Clarity</a>
+          </h2>
+        </div>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          We noticed that adding new names in the Settings menu wasn’t as intuitive as it could be. In v2.0.1, we added explicit “Add” buttons next to the Child and Person...
+        </p>
+        <a
+          href="/bug%20fix/2026/01/07/v2-0-1.html"
+          class="text-brand-teal font-semibold hover:text-brand-teal/80 flex items-center"
+        >
+          Read Release Notes
+          <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+        </a>
+      </div>
+    </article>
+    
+    <article
+      class="bg-gray-800 rounded-2xl shadow-sm border border-gray-700 overflow-hidden hover:shadow-md transition-shadow flex flex-col md:flex-row"
+    >
+      <div
+        class="md:w-1/3 h-48 md:h-auto bg-gray-700 flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-brand-teal/20 to-brand-purple/20"
+      >
+        <div class="relative z-10 p-6 text-center">
+          <span
+            class="inline-block px-3 py-1 bg-gray-600/80 backdrop-blur rounded-full text-xs font-bold text-brand-teal uppercase tracking-wide mb-2"
+          >
+            Feature
+          </span>
+          <div class="text-gray-400 text-sm font-medium">
+            Dec 28, 2025
+          </div>
+        </div>
+      </div>
+      <div class="p-8 md:w-2/3 flex flex-col justify-center">
+        <div class="flex items-center gap-3 mb-3">
+          <span
+            class="px-2 py-1 rounded text-xs font-bold bg-gray-700 text-gray-300 border border-gray-600"
+          >
+            2.0.0
+          </span>
+          <h2
+            class="text-2xl font-bold text-off-white hover:text-brand-teal cursor-pointer transition-colors"
+          >
+            <a href="/feature/2025/12/28/v2-0-0.html">Turn Chaos into Order, 94% Faster.</a>
+          </h2>
+        </div>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          This release makes My Parent Record feel faster, clearer, and more reliable during the moments you need it most—handoffs, schedule changes, and quick documentation.
+
+        </p>
+        <a
+          href="/feature/2025/12/28/v2-0-0.html"
+          class="text-brand-teal font-semibold hover:text-brand-teal/80 flex items-center"
+        >
+          Read Release Notes
+          <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+        </a>
+      </div>
+    </article>
+    
+  </div>
+</div>
+</main>
+
+    <!-- Footer -->
+    <footer
+      class="bg-gray-900 text-off-white py-12 border-t border-gray-700 mt-auto"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="col-span-1 md:col-span-1">
+            <div class="flex items-center mb-4">
+              <i data-lucide="heart" class="h-5 w-5 text-brand-teal mr-2"></i>
+              <span class="font-bold text-xl text-off-white"
+                >MyParentRecord</span
+              >
+            </div>
+            <p class="text-sm text-gray-400">
+              Simplifying parenting with tools designed for peace.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-off-white font-semibold mb-4">Product</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="#" class="hover:text-brand-teal">Features</a></li>
+              <li><a href="#" class="hover:text-brand-teal">Pricing</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-off-white font-semibold mb-4">Legal</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="#" class="hover:text-brand-teal">Privacy</a></li>
+              <li><a href="#" class="hover:text-brand-teal">Terms</a></li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="mt-12 pt-8 border-t border-gray-700 flex justify-between items-center"
+        >
+          <p class="text-sm text-gray-400">© 2026 MyParentRecord.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Initialize Icons -->
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

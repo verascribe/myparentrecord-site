@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Settings Input Clarity | My Parent Record
+    </title>
+    <!-- UPDATED: Added ?plugins=typography to the end of this URL -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              charcoal: "#131314",
+              "off-white": "#f9fafb",
+              "brand-teal": "#2a9d8f",
+              "brand-purple": "#7c3aed",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .fade-in {
+        animation: fadeIn 0.5s ease-in;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-charcoal text-off-white font-sans flex flex-col min-h-screen">
+    <!-- Navigation -->
+    <nav
+      class="sticky top-0 z-50 bg-charcoal/90 backdrop-blur-md border-b border-gray-700"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+          <a href="/" class="flex items-center cursor-pointer group">
+            <div
+              class="bg-brand-teal p-2 rounded-lg mr-2 group-hover:bg-brand-teal/90 transition-colors"
+            >
+              <i data-lucide="heart" class="h-6 w-6 text-off-white"></i>
+            </div>
+            <span class="font-bold text-xl text-off-white tracking-tight"
+              >My Parent <span class="text-brand-teal">Record</span></span
+            >
+          </a>
+
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="/"
+              class="text-off-white hover:text-brand-teal transition-colors"
+              >Home</a
+            >
+            <a
+              href="/updates.html"
+              class="text-brand-teal font-semibold transition-colors"
+              >Updates</a
+            >
+            <a
+              href="/changelog.html"
+              class="text-off-white hover:text-brand-teal transition-colors"
+              >Changelog</a
+            >
+          </div>
+
+          <div class="hidden md:flex">
+            <a
+              href="#"
+              class="bg-brand-teal hover:bg-brand-teal/90 text-off-white px-5 py-2 rounded-full font-medium transition-all shadow-md hover:shadow-lg"
+              >Get Started</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow"><!-- Wrapper for the whole page content -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 fade-in">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+    <!-- MAIN CONTENT COLUMN (Spans 8 of 12 columns) -->
+    <article class="lg:col-span-8">
+      <!-- Header Section -->
+      <div class="mb-8 md:mb-12">
+        
+        <!-- Updated: Teal Background (Low Opacity) / Teal Text -->
+        <span
+          class="inline-block px-3 py-1 bg-[#2a9d8f]/20 text-[#2a9d8f] rounded-full text-sm font-bold mb-4 border border-[#2a9d8f]/20"
+        >
+          2.0.1
+        </span>
+        
+
+        <!-- Updated: Text Color #f9fafb -->
+        <h1
+          class="text-3xl md:text-5xl font-bold text-[#f9fafb] mb-6 tracking-tight leading-tight"
+        >
+          Settings Input Clarity
+        </h1>
+
+        <div
+          class="flex items-center space-x-4 text-gray-400 text-sm md:text-base"
+        >
+          <time datetime="2026-01-07T00:00:00-05:00"
+            >January 07, 2026</time
+          >
+          <span>•</span>
+          <!-- Updated: Teal Text -->
+          <span class="font-medium text-[#2a9d8f]">Bug Fix</span>
+        </div>
+      </div>
+
+      <!-- Content Body -->
+      <!-- Updated: 'prose-invert' makes markdown white. Links set to Teal. -->
+      <div
+        class="prose prose-lg prose-invert prose-img:mx-auto prose-headings:font-bold prose-headings:text-[#f9fafb] prose-p:text-[#f9fafb]/80 prose-li:text-[#f9fafb]/80 prose-a:text-[#2a9d8f] hover:prose-a:text-[#238b7e] max-w-none"
+      >
+        <p>We noticed that adding new names in the Settings menu wasn’t as intuitive as it could be. In v2.0.1, we added explicit <strong>“Add” buttons</strong> next to the Child and Person fields, removing the guesswork of needing to press “Enter.” We also polished the visual feedback to ensure buttons clearly show when they are ready to be clicked.</p>
+
+<p><img src="/assets/images/releases/v2-0-1/entity-add-buttons.png" alt="Entity Add Buttons" class="w-full rounded-lg border border-white/10 shadow-lg" /></p>
+
+      </div>
+
+      <a
+        href="YOUR_GUIDE_LINK_HERE"
+        class="mt-8 block w-1/2 mx-auto text-center bg-[#2a9d8f] text-white border border-[#2a9d8f]/20 font-bold py-3 rounded-xl transition-colors"
+      >
+        Upgrade to the Latest Version
+      </a>
+
+      <!-- Technical Changes Box -->
+      <!-- Logic: Checks for EITHER groups OR flat items -->
+      
+      <div
+        class="mt-12 bg-[#1e1f20] rounded-2xl p-6 md:p-8 border border-white/5"
+      >
+        <h3 class="text-lg font-bold text-[#f9fafb] mb-4 flex items-center">
+          <i data-lucide="settings" class="w-5 h-5 mr-2 text-[#2a9d8f]"></i>
+          Technical Changes in 2.0.1
+        </h3>
+
+        <!-- SCENARIO A: Grouped List (The new way) -->
+        
+        <div class="space-y-6">
+          
+          <div>
+            <!-- Sub-Heading -->
+            <h4
+              class="font-bold text-[#f9fafb] text-sm uppercase tracking-wider mb-3 border-b border-white/10 pb-1"
+            >
+              UI/UX Improvements
+            </h4>
+            <!-- Items -->
+            <ul class="space-y-3 m-0 p-0 list-none">
+              
+              <li class="flex items-start text-[#f9fafb]/80">
+                <div
+                  class="w-1.5 h-1.5 rounded-full bg-[#2a9d8f] mt-2.5 mr-3 flex-shrink-0"
+                ></div>
+                <span class="leading-relaxed"
+                  ><p><strong>Settings Sidebar:</strong> Added explicit Add buttons next to the Child Name and Person Name input fields. This clarifies the two-step process (Add Entity → Save Changes) for new users who may not intuit pressing Enter.</p>
+</span
+                >
+              </li>
+              
+              <li class="flex items-start text-[#f9fafb]/80">
+                <div
+                  class="w-1.5 h-1.5 rounded-full bg-[#2a9d8f] mt-2.5 mr-3 flex-shrink-0"
+                ></div>
+                <span class="leading-relaxed"
+                  ><p><strong>UI/UX:</strong> Updated button behaviors in the Settings forms. The Add buttons now correctly display a pointer cursor on hover and are visually disabled when the input field is empty to prevent blank entries.</p>
+</span
+                >
+              </li>
+              
+            </ul>
+          </div>
+          
+        </div>
+
+        <!-- SCENARIO B: Flat List (Your old posts) -->
+        
+      </div>
+      
+
+      <!-- Footer Navigation -->
+      <div class="mt-12 pt-8 border-t border-white/10">
+        <a
+          href="/updates.html"
+          class="inline-flex items-center text-[#2a9d8f] font-bold hover:text-[#238b7e] transition-colors"
+        >
+          <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> Back to Updates
+        </a>
+      </div>
+    </article>
+
+    <!-- SIDEBAR COLUMN (Spans 4 of 12 columns) -->
+    <aside class="lg:col-span-4 space-y-8">
+      <!-- Sticky Container -->
+      <div class="sticky top-24 space-y-8">
+        <!-- Card 1: Etsy Review CTA (Universal Version) -->
+        <!-- Updated: Background #7c3aed (Purple) -->
+        <div
+          class="bg-[#7c3aed] rounded-2xl p-6 text-white shadow-lg relative overflow-hidden group border border-white/5"
+        >
+          <!-- Decorative background circle -->
+          <div
+            class="absolute -top-10 -right-10 w-32 h-32 bg-white/10 rounded-full group-hover:scale-110 transition-transform duration-500"
+          ></div>
+
+          <!-- Headline -->
+          <h3 class="text-xl font-bold mb-3 relative z-10">
+            Help us keep the updates coming.
+          </h3>
+
+          <!-- Body -->
+          <p class="text-white/90 mb-6 text-sm relative z-10 leading-relaxed">
+            Reviews on Etsy help other families find us and fuel the development
+            of new features. It only takes a moment to support the project.
+          </p>
+
+          <!-- Button -->
+          <a
+            href="YOUR_ETSY_LINK_HERE"
+            target="_blank"
+            class="block w-full text-center bg-white text-[#7c3aed] font-bold py-3 rounded-xl hover:bg-gray-50 transition-colors relative z-10 shadow-sm"
+          >
+            Support the Project
+          </a>
+        </div>
+
+        <!-- Card: Upgrade Workbook Guide -->
+        <!-- Background: #1e1f20 (Dark Charcoal) -->
+        <div
+          class="bg-[#2a9d8f] rounded-2xl p-6 border border-white/5 shadow-sm"
+        >
+          <!-- Headline with Icon -->
+          <h3 class="text-lg font-bold text-[#f9fafb] mb-3 flex items-center">
+            <!-- Icon: Image/Picture to reinforce "Visual Guide" -->
+            <i data-lucide="image" class="w-5 h-5 mr-2 text-[#f9fafb]"></i>
+            How to update your workbook
+          </h3>
+
+          <!-- Body Copy -->
+          <p class="text-sm text-[#f9fafb] mb-6 leading-relaxed">
+            Don't worry—you don't need to be a tech wizard. Follow our easy
+            picture guide to get set up in just a few minutes.
+          </p>
+
+          <!-- Button: Teal tint to signal "Helpful Action" -->
+          <!-- Replace 'YOUR_GUIDE_LINK_HERE' with the actual URL -->
+          <a
+            href="YOUR_GUIDE_LINK_HERE"
+            class="block w-full text-center bg-white text-[#2a9d8f] border border-[#2a9d8f]/20 font-bold py-3 rounded-xl transition-colors"
+          >
+            View the Picture Guide
+          </a>
+        </div>
+
+        <!-- Card 2: Latest Updates -->
+        <!-- Updated: BG #1e1f20, Dark Mode Text -->
+        <div
+          class="bg-[#1e1f20] rounded-2xl p-6 border border-white/5 shadow-sm"
+        >
+          <h3
+            class="text-lg font-bold text-[#f9fafb] mb-4 border-b border-white/10 pb-2"
+          >
+            Latest Updates
+          </h3>
+          <ul class="space-y-4">
+            
+            <li>
+              <a href="/feature/2026/01/11/v2-1-0.html" class="group">
+                <span class="block text-xs text-gray-400 mb-1"
+                  >Jan 11</span
+                >
+                <!-- Updated: Text color and Hover Teal -->
+                <span
+                  class="block text-[#f9fafb]/90 font-medium group-hover:text-[#2a9d8f] transition-colors line-clamp-2"
+                >
+                  Personal Expenses, Flexible Schedules, and Enhanced Privacy
+                </span>
+              </a>
+            </li>
+            
+            <li>
+              <a href="/bug%20fix/2026/01/07/v2-0-1.html" class="group">
+                <span class="block text-xs text-gray-400 mb-1"
+                  >Jan 07</span
+                >
+                <!-- Updated: Text color and Hover Teal -->
+                <span
+                  class="block text-[#f9fafb]/90 font-medium group-hover:text-[#2a9d8f] transition-colors line-clamp-2"
+                >
+                  Settings Input Clarity
+                </span>
+              </a>
+            </li>
+            
+            <li>
+              <a href="/feature/2025/12/28/v2-0-0.html" class="group">
+                <span class="block text-xs text-gray-400 mb-1"
+                  >Dec 28</span
+                >
+                <!-- Updated: Text color and Hover Teal -->
+                <span
+                  class="block text-[#f9fafb]/90 font-medium group-hover:text-[#2a9d8f] transition-colors line-clamp-2"
+                >
+                  Turn Chaos into Order, 94% Faster.
+                </span>
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+
+        <!-- Card 3: Newsletter -->
+        <!-- Updated: BG #1e1f20 -->
+        <div class="bg-[#1e1f20] rounded-2xl p-6 border border-white/5">
+          <h3 class="text-lg font-bold text-[#f9fafb] mb-2">
+            Stay in the loop
+          </h3>
+          <p class="text-sm text-gray-400 mb-4">
+            Get the latest features delivered to your inbox.
+          </p>
+          <!-- Updated: Input field for dark mode (Dark BG, Light Text) -->
+          <input
+            type="email"
+            placeholder="Email address"
+            class="w-full px-4 py-2 rounded-lg bg-[#131314] border border-white/10 text-[#f9fafb] mb-2 focus:ring-2 focus:ring-[#2a9d8f] outline-none placeholder-gray-500"
+          />
+          <button
+            class="w-full bg-[#f9fafb] text-[#131314] font-bold py-2 rounded-lg hover:bg-white transition-colors"
+          >
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+</main>
+
+    <!-- Footer -->
+    <footer
+      class="bg-gray-900 text-off-white py-12 border-t border-gray-700 mt-auto"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="col-span-1 md:col-span-1">
+            <div class="flex items-center mb-4">
+              <i data-lucide="heart" class="h-5 w-5 text-brand-teal mr-2"></i>
+              <span class="font-bold text-xl text-off-white"
+                >MyParentRecord</span
+              >
+            </div>
+            <p class="text-sm text-gray-400">
+              Simplifying parenting with tools designed for peace.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-off-white font-semibold mb-4">Product</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="#" class="hover:text-brand-teal">Features</a></li>
+              <li><a href="#" class="hover:text-brand-teal">Pricing</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-off-white font-semibold mb-4">Legal</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="#" class="hover:text-brand-teal">Privacy</a></li>
+              <li><a href="#" class="hover:text-brand-teal">Terms</a></li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="mt-12 pt-8 border-t border-gray-700 flex justify-between items-center"
+        >
+          <p class="text-sm text-gray-400">© 2026 MyParentRecord.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Initialize Icons -->
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
