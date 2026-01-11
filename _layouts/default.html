@@ -60,17 +60,17 @@
 
           <div class="hidden md:flex space-x-8">
             <a
-              href="/"
+              href="{{ '/' | relative_url }}"
               class="{% if page.url == '/' %}text-brand-teal font-semibold{% else %}text-off-white hover:text-brand-teal{% endif %} transition-colors"
               >Home</a
             >
             <a
-              href="updates.html"
+              href="{{ '/updates.html' | relative_url }}"
               class="{% if page.url contains '/updates' or page.layout == 'post' %}text-brand-teal font-semibold{% else %}text-off-white hover:text-brand-teal{% endif %} transition-colors"
               >Updates</a
             >
             <a
-              href="changelog.html"
+              href="{{ '/changelog.html' | relative_url }}"
               class="{% if page.url == '/changelog.html' %}text-brand-teal font-semibold{% else %}text-off-white hover:text-brand-teal{% endif %} transition-colors"
               >Changelog</a
             >

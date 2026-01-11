@@ -38,14 +38,14 @@ title: Updates
           <h2
             class="text-2xl font-bold text-off-white hover:text-brand-teal cursor-pointer transition-colors"
           >
-            <a href="{{ post.url }}">{{ post.title }}</a>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
           </h2>
         </div>
         <p class="text-gray-300 mb-6 leading-relaxed">
           {{ post.excerpt | strip_html | truncatewords: 30 }}
         </p>
         <a
-          href="{{ post.url }}"
+          href="{{ post.url | relative_url }}"
           class="text-brand-teal font-semibold hover:text-brand-teal/80 flex items-center"
         >
           Read Release Notes
