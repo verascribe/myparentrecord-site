@@ -1,0 +1,25 @@
+# Jekyll - The generated site
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Ruby / Bundler
+# We generally DO want to commit Gemfile.lock, but we ignore 
+# the actual installed gems if you installed them locally in a vendor folder.
+vendor/
+.bundle/
+
+# Mac OS System Files
+.DS_Store
+
+# Windows System Files
+Thumbs.db
+Desktop.ini
+
+# Editors (Optional but recommended)
+.vscode/
+.idea/
+
+# Node (If you end up using npm packages later)
+node_modules/
