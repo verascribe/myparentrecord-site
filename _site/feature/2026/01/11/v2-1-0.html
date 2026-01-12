@@ -54,7 +54,7 @@
             <div
               class="bg-brand-teal p-2 rounded-lg mr-2 group-hover:bg-brand-teal/90 transition-colors"
             >
-              <i data-lucide="heart" class="h-6 w-6 text-off-white"></i>
+              <!-- <i data-lucide="heart" class="h-6 w-6 text-off-white"></i> -->
             </div>
             <span class="font-bold text-xl text-off-white tracking-tight"
               >My Parent <span class="text-brand-teal">Record</span></span
@@ -62,11 +62,11 @@
           </a>
 
           <div class="hidden md:flex space-x-8">
-            <a
+            <!-- <a
               href="/myparentrecord-site/"
               class="text-off-white hover:text-brand-teal transition-colors"
               >Home</a
-            >
+            > -->
             <a
               href="/myparentrecord-site/updates.html"
               class="text-brand-teal font-semibold transition-colors"
@@ -79,13 +79,13 @@
             >
           </div>
 
-          <div class="hidden md:flex">
+          <!-- <div class="hidden md:flex">
             <a
               href="#"
               class="bg-brand-teal hover:bg-brand-teal/90 text-off-white px-5 py-2 rounded-full font-medium transition-all shadow-md hover:shadow-lg"
               >Get Started</a
             >
-          </div>
+          </div> -->
         </div>
       </div>
     </nav>
@@ -167,6 +167,24 @@
 
 <p><strong>The Result:</strong> The app no longer asks for full access to your entire Google Drive. It now only asks for permission to manage the specific “My Parent Record” files and folders. This ensures your private digital life stays private.</p>
 
+<p><strong>“See, edit, create, and delete only the specific Google Drive files you use with this app”:</strong>
+We strictly limit the app so it can only touch files it created itself. It needs this to generate your PDF reports and save backups. It cannot see your personal photos or other documents.</p>
+
+<p><strong>“View and manage spreadsheets”:</strong>
+The app lives inside a spreadsheet. It needs permission to write down the events, expenses, and schedules you type into the sidebar.</p>
+
+<p><strong>“Connect to an external service”:</strong>
+This allows the app to securely check your license key and ensure it is active.</p>
+
+<p><strong>“Send email as you”:</strong>
+This is used only when you click the “Contact Support” button in the sidebar. It allows the app to send a support email on your behalf. We never send emails without you clicking that button.</p>
+
+<p><strong>“Run when you are not present”:</strong>
+This allows the app to perform nightly housekeeping while you sleep—like updating your dashboard so your “Last 30 Days” view is accurate when you wake up.</p>
+
+<p><strong>“Display third-party web content”:</strong>
+This is simply the technology that powers the visual menu and buttons (the sidebar) on the right side of your screen.</p>
+
 <h3 id="2-personal-expense-tracking-user-requested">2. “Personal Expense” Tracking (User Requested!)</h3>
 
 <p>The Request:</p>
@@ -203,12 +221,12 @@
 
       </div>
 
-      <a
+      <!-- <a
         href="YOUR_GUIDE_LINK_HERE"
         class="mt-8 block w-1/2 mx-auto text-center bg-[#2a9d8f] text-white border border-[#2a9d8f]/20 font-bold py-3 rounded-xl transition-colors"
       >
         Upgrade to the Latest Version
-      </a>
+      </a> -->
 
       <!-- Technical Changes Box -->
       <!-- Logic: Checks for EITHER groups OR flat items -->
@@ -404,6 +422,16 @@
                 >
               </li>
               
+              <li class="flex items-start text-[#f9fafb]/80">
+                <div
+                  class="w-1.5 h-1.5 rounded-full bg-[#2a9d8f] mt-2.5 mr-3 flex-shrink-0"
+                ></div>
+                <span class="leading-relaxed"
+                  ><p><strong>Smart Dropdowns:</strong> Updated all dropdown menus to be aware of the screen edges. If you open a menu near the bottom of the screen, it will now intelligently flip upwards instead of getting cut off, ensuring you can always see all your options without extra scrolling.</p>
+</span
+                >
+              </li>
+              
             </ul>
           </div>
           
@@ -487,6 +515,16 @@
                 >
               </li>
               
+              <li class="flex items-start text-[#f9fafb]/80">
+                <div
+                  class="w-1.5 h-1.5 rounded-full bg-[#2a9d8f] mt-2.5 mr-3 flex-shrink-0"
+                ></div>
+                <span class="leading-relaxed"
+                  ><p><strong>Version Display:</strong> Fixed a persistent issue where new copies of the workbook would incorrectly display “Version 1.0.0” in the Admin panel. The application now reads its version directly from the software configuration, ensuring that your system always reports the correct release number to the registry and support team.</p>
+</span
+                >
+              </li>
+              
             </ul>
           </div>
           
@@ -500,7 +538,7 @@
       <!-- Footer Navigation -->
       <div class="mt-12 pt-8 border-t border-white/10">
         <a
-          href="/updates.html"
+          href="/myparentrecord-site/updates.html"
           class="inline-flex items-center text-[#2a9d8f] font-bold hover:text-[#238b7e] transition-colors"
         >
           <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> Back to Updates
@@ -535,7 +573,7 @@
 
           <!-- Button -->
           <a
-            href="YOUR_ETSY_LINK_HERE"
+            href="https://www.etsy.com/your/purchases"
             target="_blank"
             class="block w-full text-center bg-white text-[#7c3aed] font-bold py-3 rounded-xl hover:bg-gray-50 transition-colors relative z-10 shadow-sm"
           >
@@ -564,7 +602,7 @@
           <!-- Button: Teal tint to signal "Helpful Action" -->
           <!-- Replace 'YOUR_GUIDE_LINK_HERE' with the actual URL -->
           <a
-            href="YOUR_GUIDE_LINK_HERE"
+            href="/myparentrecord-site/upgrade-guide/"
             class="block w-full text-center bg-white text-[#2a9d8f] border border-[#2a9d8f]/20 font-bold py-3 rounded-xl transition-colors"
           >
             View the Picture Guide
@@ -630,14 +668,13 @@
 
         <!-- Card 3: Newsletter -->
         <!-- Updated: BG #1e1f20 -->
-        <div class="bg-[#1e1f20] rounded-2xl p-6 border border-white/5">
+        <!-- <div class="bg-[#1e1f20] rounded-2xl p-6 border border-white/5">
           <h3 class="text-lg font-bold text-[#f9fafb] mb-2">
             Stay in the loop
           </h3>
           <p class="text-sm text-gray-400 mb-4">
             Get the latest features delivered to your inbox.
           </p>
-          <!-- Updated: Input field for dark mode (Dark BG, Light Text) -->
           <input
             type="email"
             placeholder="Email address"
@@ -648,7 +685,7 @@
           >
             Subscribe
           </button>
-        </div>
+        </div> -->
       </div>
     </aside>
   </div>
@@ -663,7 +700,7 @@
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div class="col-span-1 md:col-span-1">
             <div class="flex items-center mb-4">
-              <i data-lucide="heart" class="h-5 w-5 text-brand-teal mr-2"></i>
+              <!-- <i data-lucide="heart" class="h-5 w-5 text-brand-teal mr-2"></i> -->
               <span class="font-bold text-xl text-off-white"
                 >MyParentRecord</span
               >
@@ -672,7 +709,7 @@
               Simplifying parenting with tools designed for peace.
             </p>
           </div>
-          <div>
+          <!-- <div>
             <h3 class="text-off-white font-semibold mb-4">Product</h3>
             <ul class="space-y-2 text-sm">
               <li><a href="#" class="hover:text-brand-teal">Features</a></li>
@@ -685,7 +722,7 @@
               <li><a href="#" class="hover:text-brand-teal">Privacy</a></li>
               <li><a href="#" class="hover:text-brand-teal">Terms</a></li>
             </ul>
-          </div>
+          </div> -->
         </div>
         <div
           class="mt-12 pt-8 border-t border-gray-700 flex justify-between items-center"

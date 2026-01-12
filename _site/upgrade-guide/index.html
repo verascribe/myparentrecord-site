@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Settings Input Clarity | My Parent Record
+      How to Upgrade Your Data | My Parent Record
     </title>
     <!-- UPDATED: Added ?plugins=typography to the end of this URL -->
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
@@ -99,30 +99,23 @@
       <!-- Header Section -->
       <div class="mb-8 md:mb-12">
         
-        <!-- Updated: Teal Background (Low Opacity) / Teal Text -->
-        <span
-          class="inline-block px-3 py-1 bg-[#2a9d8f]/20 text-[#2a9d8f] rounded-full text-sm font-bold mb-4 border border-[#2a9d8f]/20"
-        >
-          2.0.1
-        </span>
-        
 
         <!-- Updated: Text Color #f9fafb -->
         <h1
           class="text-3xl md:text-5xl font-bold text-[#f9fafb] mb-6 tracking-tight leading-tight"
         >
-          Settings Input Clarity
+          How to Upgrade Your Data
         </h1>
 
         <div
           class="flex items-center space-x-4 text-gray-400 text-sm md:text-base"
         >
-          <time datetime="2026-01-07T00:00:00-05:00"
-            >January 07, 2026</time
+          <time datetime="2026-01-12T00:00:00-05:00"
+            >January 12, 2026</time
           >
           <span>•</span>
           <!-- Updated: Teal Text -->
-          <span class="font-medium text-[#2a9d8f]">Bug Fix</span>
+          <span class="font-medium text-[#2a9d8f]">Guide</span>
         </div>
       </div>
 
@@ -131,9 +124,42 @@
       <div
         class="prose prose-lg prose-invert prose-img:mx-auto prose-headings:font-bold prose-headings:text-[#f9fafb] prose-p:text-[#f9fafb]/80 prose-li:text-[#f9fafb]/80 prose-a:text-[#2a9d8f] hover:prose-a:text-[#238b7e] max-w-none"
       >
-        <p>We noticed that adding new names in the Settings menu wasn’t as intuitive as it could be. In v2.0.1, we added explicit <strong>“Add” buttons</strong> next to the Child and Person fields, removing the guesswork of needing to press “Enter.” We also polished the visual feedback to ensure buttons clearly show when they are ready to be clicked.</p>
+        <h2 id="upgrading-in-3-easy-steps">Upgrading In 3 Easy Steps</h2>
 
-<p><img src="/myparentrecord-site/assets/images/releases/v2-0-1/entity-add-buttons.png" alt="Entity Add Buttons" class="w-full rounded-lg border border-white/10 shadow-lg" /></p>
+<h3 id="step-1-export-your-data">Step 1: Export your data.</h3>
+
+<p><img src="/myparentrecord-site/assets/images/guides/upgrade-guide/export-data.png" alt="Export Data" class="w-full rounded-lg border border-white/10 shadow-lg" /></p>
+
+<ol>
+  <li>Open your existing workbook.</li>
+  <li>In the My Parent Record sidebar menu, select “Export Data”.</li>
+  <li>Click the “Export Now” button.</li>
+  <li>Choose a location to save your workbook data to your computer.</li>
+  <li>Click “Save”.</li>
+</ol>
+
+<h3 id="step-2-make-a-copy-of-the-new-workbook">Step 2: Make a copy of the new workbook.</h3>
+
+<p><img src="/myparentrecord-site/assets/images/guides/upgrade-guide/make-a-copy.png" alt="Make a Copy" class="w-full rounded-lg border border-white/10 shadow-lg" /></p>
+
+<ol>
+  <li>Open the link to the new workbook.</li>
+  <li>In the Google Sheets menu, select “File” &gt; “Make a Copy”.</li>
+  <li>Choose a location to save your workbook to your Google Drive.</li>
+  <li>Click “Save”.</li>
+</ol>
+
+<h3 id="step-3-import-your-data">Step 3: Import your data.</h3>
+
+<p><img src="/myparentrecord-site/assets/images/guides/upgrade-guide/import-data.png" alt="Import Data" class="w-full rounded-lg border border-white/10 shadow-lg" /></p>
+
+<ol>
+  <li>Go to your copy of the new workbook.</li>
+  <li>In the My Parent Record sidebar menu, select “Import Data”.</li>
+  <li>Click the “Validate Import” button and select the file you exported in Step 1.</li>
+  <li>If the import is valid, click “Import File”.</li>
+  <li>The import will begin. This may take a few minutes.</li>
+</ol>
 
       </div>
 
@@ -146,57 +172,6 @@
 
       <!-- Technical Changes Box -->
       <!-- Logic: Checks for EITHER groups OR flat items -->
-      
-      <div
-        class="mt-12 bg-[#1e1f20] rounded-2xl p-6 md:p-8 border border-white/5"
-      >
-        <h3 class="text-lg font-bold text-[#f9fafb] mb-4 flex items-center">
-          <i data-lucide="settings" class="w-5 h-5 mr-2 text-[#2a9d8f]"></i>
-          Technical Changes in 2.0.1
-        </h3>
-
-        <!-- SCENARIO A: Grouped List (The new way) -->
-        
-        <div class="space-y-6">
-          
-          <div>
-            <!-- Sub-Heading -->
-            <h4
-              class="font-bold text-[#f9fafb] text-sm uppercase tracking-wider mb-3 border-b border-white/10 pb-1"
-            >
-              UI/UX Improvements
-            </h4>
-            <!-- Items -->
-            <ul class="space-y-3 m-0 p-0 list-none">
-              
-              <li class="flex items-start text-[#f9fafb]/80">
-                <div
-                  class="w-1.5 h-1.5 rounded-full bg-[#2a9d8f] mt-2.5 mr-3 flex-shrink-0"
-                ></div>
-                <span class="leading-relaxed"
-                  ><p><strong>Settings Sidebar:</strong> Added explicit Add buttons next to the Child Name and Person Name input fields. This clarifies the two-step process (Add Entity → Save Changes) for new users who may not intuit pressing Enter.</p>
-</span
-                >
-              </li>
-              
-              <li class="flex items-start text-[#f9fafb]/80">
-                <div
-                  class="w-1.5 h-1.5 rounded-full bg-[#2a9d8f] mt-2.5 mr-3 flex-shrink-0"
-                ></div>
-                <span class="leading-relaxed"
-                  ><p><strong>UI/UX:</strong> Updated button behaviors in the Settings forms. The Add buttons now correctly display a pointer cursor on hover and are visually disabled when the input field is empty to prevent blank entries.</p>
-</span
-                >
-              </li>
-              
-            </ul>
-          </div>
-          
-        </div>
-
-        <!-- SCENARIO B: Flat List (Your old posts) -->
-        
-      </div>
       
 
       <!-- Footer Navigation -->

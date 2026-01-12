@@ -45,12 +45,12 @@ layout: default
         {{ content }}
       </div>
 
-      <a
+      <!-- <a
         href="YOUR_GUIDE_LINK_HERE"
         class="mt-8 block w-1/2 mx-auto text-center bg-[#2a9d8f] text-white border border-[#2a9d8f]/20 font-bold py-3 rounded-xl transition-colors"
       >
         Upgrade to the Latest Version
-      </a>
+      </a> -->
 
       <!-- Technical Changes Box -->
       <!-- Logic: Checks for EITHER groups OR flat items -->
@@ -116,7 +116,7 @@ layout: default
       <!-- Footer Navigation -->
       <div class="mt-12 pt-8 border-t border-white/10">
         <a
-          href="/updates.html"
+          href="{{ '/updates.html' | relative_url }}"
           class="inline-flex items-center text-[#2a9d8f] font-bold hover:text-[#238b7e] transition-colors"
         >
           <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> Back to Updates
@@ -151,7 +151,7 @@ layout: default
 
           <!-- Button -->
           <a
-            href="YOUR_ETSY_LINK_HERE"
+            href="https://www.etsy.com/your/purchases"
             target="_blank"
             class="block w-full text-center bg-white text-[#7c3aed] font-bold py-3 rounded-xl hover:bg-gray-50 transition-colors relative z-10 shadow-sm"
           >
@@ -180,7 +180,7 @@ layout: default
           <!-- Button: Teal tint to signal "Helpful Action" -->
           <!-- Replace 'YOUR_GUIDE_LINK_HERE' with the actual URL -->
           <a
-            href="YOUR_GUIDE_LINK_HERE"
+            href="{{ '/upgrade-guide/' | relative_url }}"
             class="block w-full text-center bg-white text-[#2a9d8f] border border-[#2a9d8f]/20 font-bold py-3 rounded-xl transition-colors"
           >
             View the Picture Guide
@@ -218,14 +218,13 @@ layout: default
 
         <!-- Card 3: Newsletter -->
         <!-- Updated: BG #1e1f20 -->
-        <div class="bg-[#1e1f20] rounded-2xl p-6 border border-white/5">
+        <!-- <div class="bg-[#1e1f20] rounded-2xl p-6 border border-white/5">
           <h3 class="text-lg font-bold text-[#f9fafb] mb-2">
             Stay in the loop
           </h3>
           <p class="text-sm text-gray-400 mb-4">
             Get the latest features delivered to your inbox.
           </p>
-          <!-- Updated: Input field for dark mode (Dark BG, Light Text) -->
           <input
             type="email"
             placeholder="Email address"
@@ -236,7 +235,7 @@ layout: default
           >
             Subscribe
           </button>
-        </div>
+        </div> -->
       </div>
     </aside>
   </div>
