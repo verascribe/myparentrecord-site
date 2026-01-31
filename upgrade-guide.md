@@ -37,3 +37,12 @@ description: "A step-by-step guide to exporting and importing your workbook data
 3. Click the "Validate Import" button and select the file you exported in Step 1.
 4. If the import is valid, click "Import File".
 5. The import will begin. This may take a few minutes.
+
+### Note: Pre-v2.1.0 Data
+
+<img src="{{ '/assets/images/guides/upgrade-guide/import-warning-pre-210-data.png' | relative_url }}" alt="Import Data" class="w-full rounded-lg border border-white/10 shadow-lg">
+
+If you are migrating from a version prior to v2.1.0, you will see a warning message indicating that some data columns are missing. **This is to be expected** and does not indicate an error.
+
+1. **Payment_Method** column was added in 2.1.0 to support the addition of Personal Expenses tracking.
+2. **Schedule_End_Date** column was added in 2.1.0 to support the addition of flexible scheduling.
